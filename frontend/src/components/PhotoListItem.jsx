@@ -6,16 +6,17 @@ import photos from "mocks/photos";
 
 
 const PhotoListItem = ({ data }) => {
+  const { id, location, imageSource, username, profile } = data;
   return (
-    <div key = {data.id}>
-      <img src={data.profile} alt="Profile" />
+    <div key = {id}>
+      <img src={profile} alt="Profile" />
       <div>
         <div>
-          <span>{data.location.city},</span>
-          <span>{data.location.country}</span>
+          <span>{location.city},</span>
+          <span>{location.country}</span>
         </div>
-        <img src={data.imageSource} alt="Photo" />
-        <div>{data.username}</div>
+        <img src={imageSource} alt="Photo" />
+        <div>{username}</div>
       </div>
     </div>
   );

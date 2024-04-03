@@ -19,9 +19,9 @@ const sampleDataForPhotoListItem = {
 const App = () => {
   return (
     <div className="App">
-      {sampleDataForPhotoListItem.map((photo) => {
-        <PhotoListItem key={photo.id} data = {photo} />
-      })}
+      
+      <PhotoListItem key={sampleDataForPhotoListItem.id} data = {sampleDataForPhotoListItem} />
+  
       
     </div>
   );
