@@ -5,8 +5,8 @@ import photos from "mocks/photos";
 
 
 
-const PhotoListItem = ({ data }) => {
-  const { id, location, imageSource, username, profile } = data;
+const PhotoListItem = ({ photo }) => {
+  const { id, location, imageSource, username, profile } = photo;
   return (
     <div key = {id}>
       <img src={profile} alt="Profile" />
