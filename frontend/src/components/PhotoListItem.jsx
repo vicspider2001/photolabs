@@ -8,7 +8,7 @@ import photos from "mocks/photos";
 const PhotoListItem = ({ photo }) => {
   const { id, location, imageSource, username, profile } = photo;
   return (
-    <div key = {id}>
+    <div>
       <img src={profile} alt="Profile" />
       <div>
         <div>
