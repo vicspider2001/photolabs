@@ -1,7 +1,6 @@
 import React from 'react';
-
 import PhotoListItem from './components/PhotoListItem';
-// import './App.scss';
+import './App.css';
 
 
 const sampleDataForPhotoListItem = {
@@ -17,10 +16,18 @@ const sampleDataForPhotoListItem = {
 
 
 const App = () => {
+  const photos = new Array(3).fill(null);
+
   return (
     <div className="App">
+      {
+        photos.map((_) => {
+          <PhotoListItem key={sampleDataForPhotoListItem.id} photo = {sampleDataForPhotoListItem} />
+        })
+      }
       
-      <PhotoListItem key={sampleDataForPhotoListItem.id} photo = {sampleDataForPhotoListItem} />
+      
+      
   
       
     </div>

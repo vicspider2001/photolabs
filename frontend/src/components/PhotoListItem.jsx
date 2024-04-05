@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/PhotoListItem.css";
-import photos from "mocks/photos";
+// import photos from "mocks/photos";
 
 
 
