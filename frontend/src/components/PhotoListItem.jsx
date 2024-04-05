@@ -3,8 +3,6 @@ import "../styles/PhotoListItem.css";
 // import photos from "mocks/photos";
 
 
-
-
 const PhotoListItem = ({ photo }) => {
   const { location, imageSource, username, profile } = photo;
   return (
