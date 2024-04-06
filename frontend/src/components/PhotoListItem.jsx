@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/PhotoListItem.css";
+import PhotoFavButton from './PhotoFavButton';
 // import photos from "mocks/photos";
 
 
@@ -7,6 +8,7 @@ const PhotoListItem = ({ photo }) => {
   const { location, imageSource, username, profile } = photo;
   return (
     <div className="photo-list__item">
+      <PhotoFavButton />
       <img className="photo-list__image" src={imageSource} alt="Photo"/>
       <div>
         <img className="photo-list__user-profile" src={profile} alt="Profile"/>
