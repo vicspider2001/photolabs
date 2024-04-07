@@ -1,18 +1,16 @@
 import React from 'react';
-
-// import PhotoListItem from './components/PhotoListItem';
 import PhotoList  from './components/PhotoList';
+import TopNavigationBar  from './components/TopNavigationBar';
 import './App.scss';
-import TopicList from 'components/TopicList';
+
 
  
 const App = () => {
   
   return (
     <div className="App">
-      <TopicList/>
+      <TopNavigationBar/>
       <PhotoList/>
-      
       
     </div>
   );

@@ -17,12 +17,21 @@ const PhotoListItem = ({ photo }) => {
       <PhotoFavButton />
       <img className="photo-list__image" src={urls.full} alt="Photo"/>
       <div>
-        <img className="photo-list__user-profile" src={user.profile} alt="Profile"/>
-        <div className="photo-list__user-location">
-          <span>{location.city},</span>
-          <span>{location.country}</span>
+        
+        <div className="photo-list__user-details">
+          <span><img className="photo-list__user-profile" src={user.profile} alt="Profile"/></span>
+          <div className="photo-list__user-info">
+            {user.username}
+            <div className="photo-list__user-location">
+              <span>{location.city},</span>
+              <span>{location.country}</span>
+            </div>
+          </div>
+          
+          
         </div>
-        <div className="photo-list__user-info">{user.username}</div>
+        
+        
       </div>
       
     </div>
