@@ -2,7 +2,8 @@ import React from 'react';
 
 // import PhotoListItem from './components/PhotoListItem';
 import PhotoList  from './components/PhotoList';
-import './App.css';
+import './App.scss';
+import TopicList from 'components/TopicList';
 
  
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
   return (
     <div className="App">
       <PhotoList/>
+      <TopicList/>
       
     </div>
   );

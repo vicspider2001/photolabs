@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/PhotoListItem.css";
+import "../styles/PhotoListItem.scss";
 import PhotoFavButton from './PhotoFavButton';
 // import photos from "mocks/photos";
 

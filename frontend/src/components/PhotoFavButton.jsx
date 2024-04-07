@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import FavIcon from './FavIcon';
-import '../styles/PhotoFavButton.css';
+import '../styles/PhotoFavButton.scss';
 
 function PhotoFavButton() {
   const [selected, setSelected] = useState(false);
