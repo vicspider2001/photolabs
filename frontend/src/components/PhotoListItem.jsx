@@ -9,13 +9,17 @@ const PhotoListItem = ({ photo, toggleFav, favPhotos }) => {
     return <div>No photo data available</div>;
   };
   
+
   const { id, location, urls, user } = photo;
   const isFav = favPhotos.includes(id);
  
-  
+  const handleClick = () => {
+    toggleFav(id);
+  };
+
   return (
     <div className="photo-list__item">
-      <PhotoFavButton isFav={isFav} onClick={() =>toggleFav(id)}/>
+      <PhotoFavButton isFav={isFav} onClick={handleClick}/>
       <img className="photo-list__image" src={urls.full} alt="Photo"/>
       <div>
         
