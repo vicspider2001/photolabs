@@ -4,12 +4,12 @@ import PhotoListItem from "./PhotoListItem";
 import "../styles/PhotoList.scss";
 
 
-const PhotoList = ({ photos }) => {
+const PhotoList = ({ photos, toggleFav, favPhotos}) => {
   
   return (
     <div className="photo-list">
       {photos.map((photo) => {
-        return <PhotoListItem key={photo.id} photo={photo}/>;
+        return <PhotoListItem key={photo.id} photo={photo} toggleFav={toggleFav} favPhotos={favPhotos}/>;
     })}
     </div>
   );

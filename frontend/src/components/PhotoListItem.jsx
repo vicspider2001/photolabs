@@ -4,17 +4,18 @@ import PhotoFavButton from './PhotoFavButton';
 // import photos from "mocks/photos";
 
 
-const PhotoListItem = ({ photo }) => {
+const PhotoListItem = ({ photo, toggleFav, favPhotos }) => {
   if (!photo) {
     return <div>No photo data available</div>;
   };
   
-  const { location, urls, user } = photo;
+  const { id, location, urls, user } = photo;
+  const isFav = favPhotos.includes(id);
  
   
   return (
     <div className="photo-list__item">
-      <PhotoFavButton />
+      <PhotoFavButton isFav={isFav} onClick={() =>toggleFav(id)}/>
       <img className="photo-list__image" src={urls.full} alt="Photo"/>
       <div>
         
