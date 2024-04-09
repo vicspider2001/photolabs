@@ -4,7 +4,7 @@ import PhotoFavButton from './PhotoFavButton';
 // import photos from "mocks/photos";
 
 
-const PhotoListItem = ({ photo, toggleFav, favPhotos }) => {
+const PhotoListItem = ({ photo, toggleFav, favPhotos, setDisplayModal }) => {
   if (!photo) {
     return <div>No photo data available</div>;
   };
@@ -16,9 +16,12 @@ const PhotoListItem = ({ photo, toggleFav, favPhotos }) => {
   const handleClick = () => {
     toggleFav(id);
   };
+  const handleModalClick = () => {
+    setDisplayModal(true); // Set displayModal to true when photo is clicked
+  };
 
   return (
-    <div className="photo-list__item">
+    <div className="photo-list__item" onClick={handleModalClick}>
       <PhotoFavButton isFav={isFav} onClick={handleClick}/>
       <img className="photo-list__image" src={urls.full} alt="Photo"/>
       <div>

@@ -3,7 +3,7 @@ import TopNavigationBar from '../components/TopNavigationBar';
 import PhotoList from '../components/PhotoList';
 import '../styles/HomeRoute.scss';
 
-const HomeRoute = ({ photos, topics}) => {
+const HomeRoute = ({ photos, topics, setDisplayModal }) => { //to receive Modal, photos and topics as props
   const [favPhotos, setFavPhotos] = useState([]);
 
   const toggleFav = (photoId) => {
@@ -16,7 +16,7 @@ const HomeRoute = ({ photos, topics}) => {
   return (
     <div className="home-route">
       <TopNavigationBar topics={topics} favCount={favPhotos.length} />
-      <PhotoList photos={photos} toggleFav = {toggleFav} favPhotos={favPhotos} />
+      <PhotoList photos={photos} toggleFav = {toggleFav} favPhotos={favPhotos} setDisplayModal={setDisplayModal} /> {/* Pass the Modal, togglePhotos and Photos functions */}
     </div>
   );
 };
