@@ -92,7 +92,7 @@ import React from 'react';
 import '../styles/PhotoDetailsModal.scss'
 import closeSymbol from '../assets/closeSymbol.svg';
 
-const PhotoDetailsModal = ({ closeDisplayModal, selectedPhoto, toggleFav }) => {
+const PhotoDetailsModal = ({ closeDisplayModal, selectedPhoto }) => {
   if (!selectedPhoto) {
     return null;
   }
@@ -111,19 +111,20 @@ const PhotoDetailsModal = ({ closeDisplayModal, selectedPhoto, toggleFav }) => {
             <div className="photographer-details">
               <h3>{user.username}</h3>
               <p>{user.name}</p>
-              <p>{location.city}, {location.country}</p>
             </div>
           </>
         )}
       </div>
       <div className="photo-details-modal__images">
         <img className="photo-details-modal__image" src={urls.full} alt="Selected Photo" />
+        <p>{location.city}, {location.country}</p>
       </div>
       <div className="photo-details-modal__top-bar">
         <h2>Similar Photos</h2>
         <div className="photo-details-modal__images">
           {similar_photos.map((photo) => (
-            <img key={photo.id} className="similar-photo" src={photo.urls.regular} alt="Similar Photo" />
+            // <img key={photo.id} className="similar-photo" src={photo.urls.regular} alt="Similar Photo" />
+            <PhotoList photos={similar_photos} toggleFav={toggleFav} />
           ))}
         </div>
       </div>
