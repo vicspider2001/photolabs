@@ -16,7 +16,9 @@ const PhotoListItem = ({ photo, toggleFav, favPhotos, setDisplayModal }) => {
     toggleFav(id);
   };
   const handleModalClick = () => {
+    console.log('Clicked on the image');
     setDisplayModal(photo); // Set displayModal and pass selected photo data
+    
   };
 
   return (
