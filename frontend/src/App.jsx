@@ -13,7 +13,7 @@ const App = () => {
   return (
     <div className="App">
       <HomeRoute photos={photos} topics={topics} setDisplayModal={setDisplayModal} /> {/* to pass the setDisplayModal function as prop */}
-      {displayModal && <PhotoDetailsModal />} {/* Conditionally render the modal */}
+      {displayModal && <PhotoDetailsModal closeDisplayModal={setDisplayModal}/>} {/* Conditionally render the modal */}
     </div>
   );
 };
