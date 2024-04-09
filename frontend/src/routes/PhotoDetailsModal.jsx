@@ -2,7 +2,8 @@ import React from 'react';
 import '../styles/PhotoDetailsModal.scss'
 import closeSymbol from '../assets/closeSymbol.svg';
 
-const PhotoDetailsModal = ({ closeDisplayModal  }) => {
+const PhotoDetailsModal = ({ closeDisplayModal, selectedPhoto }) => {
+  console.log('Selected Photo:', selectedPhoto);
   return (
     <div className="photo-details-modal">
       <button className="photo-details-modal__close-button" onClick={() => closeDisplayModal(false)}>

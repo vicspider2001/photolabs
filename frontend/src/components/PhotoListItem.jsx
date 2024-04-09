@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/PhotoListItem.scss";
 import PhotoFavButton from './PhotoFavButton';
-// import photos from "mocks/photos";
 
 
 const PhotoListItem = ({ photo, toggleFav, favPhotos, setDisplayModal }) => {
@@ -17,8 +16,7 @@ const PhotoListItem = ({ photo, toggleFav, favPhotos, setDisplayModal }) => {
     toggleFav(id);
   };
   const handleModalClick = () => {
-    setDisplayModal(true, photo); // Set displayModal and pass selected photo data
-    console.log("setDisplayModal", setDisplayModal)
+    setDisplayModal(photo); // Set displayModal and pass selected photo data
   };
 
   return (
