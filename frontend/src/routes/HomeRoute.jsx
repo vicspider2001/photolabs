@@ -3,17 +3,8 @@ import TopNavigationBar from '../components/TopNavigationBar';
 import PhotoList from '../components/PhotoList';
 import '../styles/HomeRoute.scss';
 
-const HomeRoute = ({ photos, topics, setSelectedPhoto }) => {
-  const [favPhotos, setFavPhotos] = useState([]);
-
-  const toggleFav = (photoId) => {
-    if (favPhotos.includes(photoId)) {
-      setFavPhotos(favPhotos.filter(id => id !== photoId));
-    } else {
-      setFavPhotos([...favPhotos, photoId]);
-    }
-  };
-
+const HomeRoute = ({ photos, topics, setSelectedPhoto, favPhotos, toggleFav }) => {
+  
   return (
     <div className="home-route">
       <TopNavigationBar topics={topics} favCount={favPhotos.length} />

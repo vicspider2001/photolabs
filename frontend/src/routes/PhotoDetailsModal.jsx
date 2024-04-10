@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/PhotoDetailsModal.scss'
 import closeSymbol from '../assets/closeSymbol.svg';
 import PhotoList from 'components/PhotoList';
+import PhotoFavButton from 'components/PhotoFavButton';
 
-const PhotoDetailsModal = ({ closeDisplayModal, selectedPhoto}) => {
+const PhotoDetailsModal = ({ closeDisplayModal, selectedPhoto, toggleFav, photos}) => {
  console.log("SelectedPhotos", selectedPhoto)
   const { urls, similar_photos, user, location } = selectedPhoto;
+  const [ID, setID] = useState('');
+
+  const handleModalClick = () => {
+    {photos.map((modalPhotos) => {
+      toggleFav(modalPhotos.id);
+    })}
+    
+  };
+  
 
   return (
     <div className="photo-details-modal">
@@ -13,6 +23,7 @@ const PhotoDetailsModal = ({ closeDisplayModal, selectedPhoto}) => {
         <img src={closeSymbol} alt="close symbol" />
       </button>
       <div className="photo-details-modal__images">
+        <div><PhotoFavButton onClick={() => handleModalClick}/></div>
         <img className="photo-details-modal__image" src={urls.full} alt="Selected Photo" />
         <div className='photo-details-modal__photographer-details'>
           {user && (
