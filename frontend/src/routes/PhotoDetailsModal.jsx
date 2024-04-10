@@ -3,7 +3,7 @@ import '../styles/PhotoDetailsModal.scss'
 import closeSymbol from '../assets/closeSymbol.svg';
 import PhotoList from 'components/PhotoList';
 
-const PhotoDetailsModal = ({ closeDisplayModal, selectedPhoto, toggleFav}) => {
+const PhotoDetailsModal = ({ closeDisplayModal, selectedPhoto}) => {
  console.log("SelectedPhotos", selectedPhoto)
   const { urls, similar_photos, user, location } = selectedPhoto;
 
@@ -35,7 +35,7 @@ const PhotoDetailsModal = ({ closeDisplayModal, selectedPhoto, toggleFav}) => {
           Similar Photos
           
         </div>
-        <PhotoList photos={Object.values(similar_photos)} toggleFav={toggleFav} />
+        <PhotoList photos={Object.values(similar_photos)} />
           
       </div>
         

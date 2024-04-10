@@ -7,17 +7,12 @@ import './App.scss';
 
 const App = () => {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
-
-  // Placeholder toggleFav function
-  const toggleFav = (photoId) => {
-    console.log("Toggling favorite for photo with ID:", photoId);
-   
-  };
   
+
   return (
     <div className="App">
       <HomeRoute photos={photos} topics={topics} setSelectedPhoto={setSelectedPhoto} />
-      {selectedPhoto && <PhotoDetailsModal selectedPhoto={selectedPhoto} closeDisplayModal={() => setSelectedPhoto(null)} toggleFav={toggleFav} />}
+      {selectedPhoto && <PhotoDetailsModal selectedPhoto={selectedPhoto} closeDisplayModal={() => setSelectedPhoto(null)} />}
     </div>
   );
 };
