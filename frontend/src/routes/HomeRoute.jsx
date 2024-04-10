@@ -1,37 +1,9 @@
-// import React, { useState } from 'react';
-// import TopNavigationBar from '../components/TopNavigationBar';
-// import PhotoList from '../components/PhotoList';
-// import '../styles/HomeRoute.scss';
-
-// const HomeRoute = ({ photos, topics, setDisplayModal  }) => { //to receive Modal, photos and topics as props
-//   const [favPhotos, setFavPhotos] = useState([]);
-    
-
-//   const toggleFav = (photoId) => {
-//     if (favPhotos.includes(photoId)) {
-//       setFavPhotos(favPhotos.filter(id => id !== photoId));
-//     } else {
-//       setFavPhotos([...favPhotos, photoId]);
-//     }
-//   };
-
-//   return (
-//     <div className="home-route">
-//       <TopNavigationBar topics={topics} favCount={favPhotos.length} />
-//       <PhotoList photos={photos} toggleFav = {toggleFav} favPhotos={favPhotos} setDisplayModal={setDisplayModal} /> {/* Pass the Modal, togglePhotos and Photos functions */}
-      
-//     </div>
-//   );
-// };
-
-// export default HomeRoute;
-
 import React, { useState } from 'react';
 import TopNavigationBar from '../components/TopNavigationBar';
 import PhotoList from '../components/PhotoList';
 import '../styles/HomeRoute.scss';
 
-const HomeRoute = ({ photos, topics, setDisplayModal }) => {
+const HomeRoute = ({ photos, topics, setSelectedPhoto }) => {
   const [favPhotos, setFavPhotos] = useState([]);
 
   const toggleFav = (photoId) => {
@@ -45,7 +17,7 @@ const HomeRoute = ({ photos, topics, setDisplayModal }) => {
   return (
     <div className="home-route">
       <TopNavigationBar topics={topics} favCount={favPhotos.length} />
-      <PhotoList photos={photos} toggleFav={toggleFav} setDisplayModal={setDisplayModal} />
+      <PhotoList photos={photos} toggleFav={toggleFav} setSelectedPhoto={setSelectedPhoto} />
     </div>
   );
 };
