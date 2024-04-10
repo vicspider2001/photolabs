@@ -4,15 +4,12 @@ import closeSymbol from '../assets/closeSymbol.svg';
 import PhotoList from 'components/PhotoList';
 import PhotoFavButton from 'components/PhotoFavButton';
 
-const PhotoDetailsModal = ({ closeDisplayModal, selectedPhoto, toggleFav, photos}) => {
+const PhotoDetailsModal = ({ closeDisplayModal, selectedPhoto, toggleFav }) => {
  console.log("SelectedPhotos", selectedPhoto)
-  const { urls, similar_photos, user, location } = selectedPhoto;
-  const [ID, setID] = useState('');
-
+  const { id, urls, similar_photos, user, location } = selectedPhoto;
+ 
   const handleModalClick = () => {
-    {photos.map((modalPhotos) => {
-      toggleFav(modalPhotos.id);
-    })}
+    toggleFav(id);
     
   };
   
