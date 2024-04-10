@@ -11,11 +11,13 @@ const PhotoListItem = ({ photo, toggleFav, setSelectedPhoto }) => {
   const handleClick = () => {
     toggleFav(id);
   };
+
   const handleModalClick = () => {
     console.log("setDisplayModal click")
     setSelectedPhoto(photo);
     
   };
+  
 
   return (
     <div className="photo-list__item">

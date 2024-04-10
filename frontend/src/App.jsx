@@ -1,26 +1,19 @@
-import React, { useState } from 'react';
-import HomeRoute from './routes/HomeRoute';
+// App.jsx
+import React from 'react';
+import HomeRoute from 'routes/HomeRoute';
+import useApplicationData from 'hooks/useApplicationData';
+import PhotoDetailsModal from 'routes/PhotoDetailsModal';
 import photos from 'mocks/photos';
 import topics from 'mocks/topics';
-import PhotoDetailsModal from 'routes/PhotoDetailsModal';
 import './App.scss';
 
 const App = () => {
-  const [selectedPhoto, setSelectedPhoto] = useState(null);
-  const [favPhotos, setFavPhotos] = useState([]);
-
-  const toggleFav = (photoId) => {
-    if (favPhotos.includes(photoId)) {
-      setFavPhotos(favPhotos.filter(id => id !== photoId));
-    } else {
-      setFavPhotos([...favPhotos, photoId]);
-    }
-  };
+  const { selectedPhoto, favPhotos, toggleFav, onClosePhotoDetailsModal, setSelectedPhoto  } = useApplicationData();
 
   return (
     <div className="App">
-      <HomeRoute photos={photos} topics={topics} setSelectedPhoto={setSelectedPhoto} favPhotos={favPhotos} toggleFav={toggleFav}/>
-      {selectedPhoto && <PhotoDetailsModal selectedPhoto={selectedPhoto} closeDisplayModal={() => setSelectedPhoto(null)} toggleFav={toggleFav} photos={photos}/>}
+      <HomeRoute photos={photos} topics={topics} favPhotos={favPhotos} toggleFav={toggleFav} setSelectedPhoto={setSelectedPhoto} />
+      {selectedPhoto && <PhotoDetailsModal selectedPhoto={selectedPhoto} closeDisplayModal={onClosePhotoDetailsModal} toggleFav={toggleFav} photos={photos} />}
     </div>
   );
 };
