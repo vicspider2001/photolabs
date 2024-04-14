@@ -8,12 +8,12 @@ import topics from 'mocks/topics';
 import './App.scss';
 
 const App = () => {
-  const { selectedPhoto, favPhotos, toggleFav, onClosePhotoDetailsModal, setSelectedPhoto  } = useApplicationData();
+  const { selectedPhoto, favPhotos, toggleFav, onClosePhotoDetailsModal, setSelectedPhoto, photoData, topicData } = useApplicationData();
 
   return (
     <div className="App">
-      <HomeRoute photos={photos} topics={topics} favPhotos={favPhotos} toggleFav={toggleFav} setSelectedPhoto={setSelectedPhoto} />
-      {selectedPhoto && <PhotoDetailsModal selectedPhoto={selectedPhoto} closeDisplayModal={onClosePhotoDetailsModal} toggleFav={toggleFav} photos={photos} />}
+      <HomeRoute photos={photoData} topics={topicData} favPhotos={favPhotos} toggleFav={toggleFav} setSelectedPhoto={setSelectedPhoto} />
+      {selectedPhoto && <PhotoDetailsModal selectedPhoto={selectedPhoto} closeDisplayModal={onClosePhotoDetailsModal} toggleFav={toggleFav} photos={photoData} />}
     </div>
   );
 };
