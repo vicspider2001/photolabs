@@ -3,11 +3,11 @@ import FavBadge from './FavBadge';
 import TopicList from './TopicList';
 import '../styles/TopNavigationBar.scss'
 
-const TopNavigation = ({topics, favCount}) => {
+const TopNavigation = ({topics, favCount, fetchPhotosByTopic}) => {
   return (
     <div className="top-nav-bar">
       <span className="top-nav-bar__logo">PhotoLabs</span>
-      <TopicList topics = {topics}/>
+      <TopicList topics = {topics} fetchPhotosByTopic={fetchPhotosByTopic}/>
        {favCount > 0 && <FavBadge count={favCount} />}
        
     </div>

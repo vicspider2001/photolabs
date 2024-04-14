@@ -71,12 +71,22 @@ useEffect(() => {
     .catch(error => console.error('Error fetching topics:', error));
 }, []);
 
+// Fetch photos for a specific topic
+const fetchPhotosByTopic = (topic_id) => {
+  fetch(`http://localhost:8001/api/topics/photos/${topic_id}`)
+    .then(response => response.json())
+    .then(data => dispatch({ type: SET_PHOTO_DATA, payload: data }))
+    .catch(error => console.error(`Error fetching photos for topic ${topic_id}:`, error));
+};
+
+
 
   return {
     ...state,
     setSelectedPhoto,
     toggleFav,
     onClosePhotoDetailsModal,
+    fetchPhotosByTopic
   };
 };
 

@@ -6,11 +6,11 @@ import PhotoDetailsModal from 'routes/PhotoDetailsModal';
 import './App.scss';
 
 const App = () => {
-  const { selectedPhoto, favPhotos, toggleFav, onClosePhotoDetailsModal, setSelectedPhoto, photoData, topicData } = useApplicationData();
+  const { selectedPhoto, favPhotos, toggleFav, onClosePhotoDetailsModal, setSelectedPhoto, photoData, topicData, fetchPhotosByTopic } = useApplicationData();
 
   return (
     <div className="App">
-      <HomeRoute photos={photoData} topics={topicData} favPhotos={favPhotos} toggleFav={toggleFav} setSelectedPhoto={setSelectedPhoto} />
+      <HomeRoute photos={photoData} topics={topicData} favPhotos={favPhotos} toggleFav={toggleFav} setSelectedPhoto={setSelectedPhoto} fetchPhotosByTopic={fetchPhotosByTopic} />
       {selectedPhoto && <PhotoDetailsModal selectedPhoto={selectedPhoto} closeDisplayModal={onClosePhotoDetailsModal} toggleFav={toggleFav} photos={photoData} />}
     </div>
   );
