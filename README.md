@@ -23,7 +23,7 @@ cd backend
 npm start
 ```
 
-## Final Product Pix
+## Screenshots
 
 !["Homepage"](https://github.com/vicspider2001/photolabs/blob/main/frontend/public/PhotoLab/Photo%20Pages.png)
 !["Modal page"](https://github.com/vicspider2001/photolabs/blob/main/frontend/public/PhotoLab/Modal%20Page.png)
