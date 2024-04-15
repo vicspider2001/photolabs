@@ -22,3 +22,9 @@ Read `backend/readme` for further setup details.
 cd backend
 npm start
 ```
+
+## Final Product Pix
+
+!["Homepage"](https://github.com/vicspider2001/photolabs/blob/main/frontend/public/PhotoLab/Photo%20Pages.png)
+!["Modal page"](https://github.com/vicspider2001/photolabs/blob/main/frontend/public/PhotoLab/Modal%20Page.png)
+!["Similar Pages"](https://github.com/vicspider2001/photolabs/blob/main/frontend/public/PhotoLab/Similar%20Pages.png)
