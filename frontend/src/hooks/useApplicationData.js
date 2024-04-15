@@ -7,13 +7,19 @@ const TOGGLE_FAV = 'TOGGLE_FAV';
 const CLOSE_PHOTO_DETAILS_MODAL = 'CLOSE_PHOTO_DETAILS_MODAL';
 const SET_PHOTO_DATA = 'SET_PHOTO_DATA'; 
 const SET_TOPIC_DATA = 'SET_TOPIC_DATA'; 
+const SET_SHOW_ALERT = 'SET_SHOW_ALERT'; 
+const SET_SELECTED = 'SET_SELECTED'; 
+
 
 // Define initial state
 const initialState = {
   selectedPhoto: null,
   favPhotos: [],
   photoData: [],
-  topicData: []
+  topicData: [],
+  showAlert: false,
+  selected: false
+  
 };
 
 
@@ -22,6 +28,10 @@ const reducer = (state, action) => {
   switch (action.type) {
     case SET_SELECTED_PHOTO:
       return { ...state, selectedPhoto: action.payload };
+    case SET_SHOW_ALERT:
+      return { ...state, showAlert: action.payload };
+    case SET_SELECTED:
+      return { ...state, selected: action.payload };
     case TOGGLE_FAV:
       if (state.favPhotos.includes(action.payload)) {
         return { ...state, favPhotos: state.favPhotos.filter(id => id !== action.payload) };
@@ -34,6 +44,7 @@ const reducer = (state, action) => {
       return { ...state, photoData: action.payload };
     case SET_TOPIC_DATA:
       return { ...state, topicData: action.payload };
+    
     default:
         return state;
   }
@@ -49,6 +60,14 @@ const useApplicationData = () => {
 
   const toggleFav = (photoId) => {
     dispatch({ type: TOGGLE_FAV, payload: photoId });
+  };
+
+  const setShowAlert = (value) => {
+    dispatch({ type: SET_SHOW_ALERT, payload: value });
+  };
+
+  const setSelected = (value) => {
+    dispatch({ type: SET_SELECTED, payload: value });
   };
 
   const onClosePhotoDetailsModal = () => {
@@ -86,7 +105,9 @@ const fetchPhotosByTopic = (topic_id) => {
     setSelectedPhoto,
     toggleFav,
     onClosePhotoDetailsModal,
-    fetchPhotosByTopic
+    fetchPhotosByTopic,
+    setShowAlert,
+    setSelected
   };
 };
 
