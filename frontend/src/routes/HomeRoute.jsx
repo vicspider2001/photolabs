@@ -3,12 +3,12 @@ import TopNavigationBar from '../components/TopNavigationBar';
 import PhotoList from '../components/PhotoList';
 import '../styles/HomeRoute.scss';
 
-const HomeRoute = ({ photos, topics, favPhotos, toggleFav, setSelectedPhoto, fetchPhotosByTopic, setShowAlert, setSelected }) => {
+const HomeRoute = ({ photos, topics, favPhotos, toggleFav, setSelectedPhoto, fetchPhotosByTopic, }) => {
      
   return (
     <div className="home-route">
-      <TopNavigationBar topics={topics} favCount={favPhotos.length} fetchPhotosByTopic={fetchPhotosByTopic} setShowAlert={setShowAlert} setSelected={setSelected} />
-      <PhotoList photos={photos} toggleFav={toggleFav} setSelectedPhoto={setSelectedPhoto} />
+      <TopNavigationBar topics={topics} favCount={favPhotos.length} fetchPhotosByTopic={fetchPhotosByTopic} />
+      <PhotoList photos={photos} toggleFav={toggleFav} setSelectedPhoto={setSelectedPhoto} favPhotos={favPhotos} />
     </div>
   );
 };

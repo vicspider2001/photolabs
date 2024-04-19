@@ -8,12 +8,15 @@ const TopNavigation = ({ topics, favCount, fetchPhotosByTopic, setShowAlert, set
   
   // Function to handle clicking on the FavBadge
   const handleFavBadgeClick = () => {
-    setShowAlert(true); // Set showAlert to true when FavBadge is clicked
+    setShowAlert = true; // Set showAlert to true when FavBadge is clicked
+    setShowAlert = !setShowAlert;
+
         
   };
 
   const favIconEffect = () => {
-    setSelected(true); // Set setSelcted to true when FavBadge is clicked and fill favIcon with color
+    setSelected = true; // Set setSelcted to true when FavBadge is clicked and fill favIcon with color
+    setSelected = !setSelected
     
   };
 
@@ -23,7 +26,7 @@ const TopNavigation = ({ topics, favCount, fetchPhotosByTopic, setShowAlert, set
     <div className="top-nav-bar">
       <span className="top-nav-bar__logo">PhotoLabs</span>
       <TopicList topics={topics} fetchPhotosByTopic={fetchPhotosByTopic} />
-      <FavBadge isFavPhotoExist={favCount > 0} onClick={handleFavBadgeClick} selected={favIconEffect} setSelected={setSelected} />
+      <FavBadge isFavPhotoExist={favCount > 0} onClick={handleFavBadgeClick} selected={favIconEffect} />
     </div>
   );
 };
