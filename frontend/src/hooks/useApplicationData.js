@@ -61,28 +61,24 @@ const useApplicationData = () => {
     dispatch({ type: CLOSE_PHOTO_DETAILS_MODAL });
   };
 
-  //Fetching Photo Data
   useEffect(() => {
-  fetch('http://localhost:8001/api/photos')
-    .then(response => response.json())
-    .then(data => dispatch({ type: SET_PHOTO_DATA, payload: data }))
-    .catch(error => console.error('Error fetching photos:', error));
+    Promise.all([
+      fetch("/api/photos").then(response => response.json()),
+      fetch("/api/topics").then(response => response.json())
+    ])
+    .then(([photosData, topicsData]) => {
+      dispatch({ type: SET_PHOTO_DATA, payload: photosData });
+      dispatch({ type: SET_TOPIC_DATA, payload: topicsData });
+    })
+    .catch(error => console.error('Error fetching data:', error));
   }, []);
-
-//Fetching Topics Data
-useEffect(() => {
-  fetch('http://localhost:8001/api/topics')
-    .then(response => response.json())
-    .then(data => dispatch({ type: SET_TOPIC_DATA, payload: data }))
-    .catch(error => console.error('Error fetching topics:', error));
-}, []);
-
+    
 // Fetch photos for a specific topic
-const fetchPhotosByTopic = (topic_id) => {
-  fetch(`http://localhost:8001/api/topics/photos/${topic_id}`)
-    .then(response => response.json())
-    .then(data => dispatch({ type: SET_PHOTO_DATA, payload: data }))
-    .catch(error => console.error(`Error fetching photos for topic ${topic_id}:`, error));
+  const fetchPhotosByTopic = (topic_id) => {
+    fetch(`/api/topics/photos/${topic_id}`)
+      .then(response => response.json())
+      .then(data => dispatch({ type: SET_PHOTO_DATA, payload: data }))
+      .catch(error => console.error(`Error fetching photos for topic ${topic_id}:`, error));
 };
 
 
